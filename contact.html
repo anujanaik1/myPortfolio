@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Happy Paws</title>
+
+  <!-- Bootstrap CSS + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      padding-top: 60px;
+      margin: 0;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .form-container {
+      background: linear-gradient(135deg, #1CB5E0 0%, #000851 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 0 8px 8px 0;
+      height: 540px;
+    }
+
+    .form-control, .form-select {
+      border-radius: 8px;
+    }
+
+    .btn-green {
+      background-color: #00C853;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .btn-green:hover {
+      background-color: #00b94f;
+    }
+
+    @media (max-width: 768px) {
+      .form-container {
+        border-radius: 0 0 8px 8px;
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-3">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="pets.png" alt="Cat Paw" style="height: 30px;" class="me-2">
+      Happy Paws
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link active text-warning fw-bold" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold">Get in Touch</h2>
+    <p class="text-center text-muted mb-5">We'd love to hear from you and your furry friends!</p>
+
+    <div class="row g-4">
+      <!-- Contact Form -->
+      <div class="col-md-6 form-container">
+        <h2 class="mb-4 fw-bold">Free Consultation</h2>
+        <form id="contactForm">
+          <div class="mb-3">
+            <select class="form-select" required>
+              <option selected disabled>Select services</option>
+              <option>Pet Grooming</option>
+              <option>Cat Sitting</option>
+              <option>Dog Sitting</option>
+              <option>Overnight Pet Care</option>
+              <option>Pet Walking</option>
+              <option>Small Animal Care</option>
+              <option>Vet Appointment</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="text" class="form-control" placeholder="Vehicle number" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <input type="date" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <input type="time" class="form-control" placeholder="Time" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-green w-100 py-2">SEND MESSAGE</button>
+        </form>
+        <p id="response" class="mt-3 text-success fw-semibold"></p>
+      </div>
+
+      <!-- Map or Info -->
+      <div class="col-md-6">
+        <div class="h-100 d-flex flex-column justify-content-center">
+          <h5 class="mb-3">Our Location</h5>
+          <iframe src="https://maps.google.com/maps?q=central%20park%20new%20york&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                  width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
+          <p class="mt-3 text-muted"><strong>Email:</strong> contact@happypaws.com<br>
+            <strong>Phone:</strong> +1 123-456-7890</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-2">© 2025 Happy Paws Pet Sitting. All Rights Reserved.</p>
+    <div>
+      <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Form Submit Script -->
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("response").innerText = "Thank you! We'll get back to you shortly!";
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
